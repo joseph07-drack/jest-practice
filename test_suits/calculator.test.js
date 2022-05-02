@@ -1,4 +1,4 @@
-const { add, subtract } = require('../calculator');
+const { add, subtract, divide } = require('../calculator');
 
 describe('Addition', () => {
   it('should return 5', () => {
@@ -25,5 +25,19 @@ describe('Subtraction', () => {
 
   it('shoud return a negative number when substracting 2 negative numbers', () => {
     expect(subtract(-2, -1)).toBeLessThan(0);
+  });
+});
+
+describe('Division', () => {
+  it('should return underfine if the 2nd number is 0', () => {
+    expect(divide(2, 0)).toBeFalsy();
+  });
+
+  it('should return 10', () => {
+    expect(divide(10, 2)).toEqual(5);
+  });
+
+  it('should return 1 when dividing identical numbers', () => {
+    expect(divide(5, 5)).toEqual(1);
   });
 });
