@@ -8,4 +8,8 @@ describe('Capitalize', () => {
   it('should return Africa', () => {
     expect(capitalize('africa')).toBe('Africa');
   });
+
+  it('should return Javascript is great.', () => {
+    expect(capitalize('      javascript is great')).toBe('Javascript is great');
+  });
 });
