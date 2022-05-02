@@ -1,4 +1,4 @@
-const { add, subtract, divide } = require('../calculator');
+const { add, subtract, divide, multiply } = require('../calculator');
 
 describe('Addition', () => {
   it('should return 5', () => {
@@ -39,5 +39,23 @@ describe('Division', () => {
 
   it('should return 1 when dividing identical numbers', () => {
     expect(divide(5, 5)).toEqual(1);
+  });
+});
+
+describe('Multiplication', () => {
+  it('should return 10', () => {
+    expect(multiply(2, 5)).toEqual(10);
+  });
+
+  it('should return 0 if any zero present', () => {
+    expect(multiply(4, 0)).toEqual(0);
+  });
+
+  it('shoud return a positive number if both numbers are negative', () => {
+    expect(multiply(-3, -3)).toEqual(9);
+  });
+
+  it('shoud return a negative number if one number is negative', () => {
+    expect(multiply(-3, 3)).toEqual(-9);
   });
 });
